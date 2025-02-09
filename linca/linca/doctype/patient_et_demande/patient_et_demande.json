@@ -1,0 +1,323 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nom_du_patient",
+ "creation": "2025-01-08 12:14:23.861604",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "dr",
+  "column_break_lorn",
+  "date",
+  "status",
+  "service",
+  "information_g\u00e9n\u00e9rale_section",
+  "pr\u00e9nom_du_patient",
+  "column_break_aqef",
+  "nom_du_patient",
+  "column_break_rssn",
+  "column_break_iakp",
+  "section_break_cgch",
+  "sexe",
+  "column_break_qfkx",
+  "age",
+  "column_break_muuz",
+  "taille_estimecm",
+  "column_break_gofx",
+  "poid_estim\u00e9_kg",
+  "section_break_eddq",
+  "terrain",
+  "quel_est_le_motif_de_votre_demande__section",
+  "on_demande_un_aide_au_diag",
+  "on_demande_une_aide_th\u00e9rapeutique",
+  "on_demande_un_transfer_a_votre_service",
+  "on_demande_un_conseil_de_preventionvaccination",
+  "autre_apr\u00e9ciser",
+  "autre",
+  "column_break_pgev",
+  "risque_bmr_section",
+  "votre_patient__a_\u00e9t\u00e9",
+  "votre_patient",
+  "votre_patient_2",
+  "est_ce_que_votre_patient_a_une_allergie_connue_section",
+  "oui",
+  "column_break_dcsx",
+  "non",
+  "section_break_hauo",
+  "column_break_boft",
+  "allergie_aux_b\u00e9talacamines__penicillines",
+  "autre_type_allergie",
+  "autre_type_aller",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "information_g\u00e9n\u00e9rale_section",
+   "fieldtype": "Section Break",
+   "label": "Information g\u00e9n\u00e9rale "
+  },
+  {
+   "fieldname": "pr\u00e9nom_du_patient",
+   "fieldtype": "Data",
+   "label": "Pr\u00e9nom du patient "
+  },
+  {
+   "fieldname": "column_break_aqef",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nom_du_patient",
+   "fieldtype": "Data",
+   "label": "Nom du patient ",
+   "unique": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age "
+  },
+  {
+   "fieldname": "sexe",
+   "fieldtype": "Data",
+   "label": "Sexe "
+  },
+  {
+   "fieldname": "poid_estim\u00e9_kg",
+   "fieldtype": "Float",
+   "label": "Poid (estim\u00e9) KG "
+  },
+  {
+   "fieldname": "taille_estimecm",
+   "fieldtype": "Float",
+   "label": "Taille (estime)CM"
+  },
+  {
+   "fieldname": "section_break_eddq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "terrain",
+   "fieldtype": "Heading",
+   "label": "               Terrain"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "quel_est_le_motif_de_votre_demande__section",
+   "fieldtype": "Section Break",
+   "label": "Quel est le motif de votre demande ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_un_aide_au_diag",
+   "fieldtype": "Check",
+   "label": "on demande un aide au diag"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_une_aide_th\u00e9rapeutique",
+   "fieldtype": "Check",
+   "label": "on demande une aide th\u00e9rapeutique "
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_un_transfer_a_votre_service",
+   "fieldtype": "Check",
+   "label": "on demande un transfer a votre service "
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_un_conseil_de_preventionvaccination",
+   "fieldtype": "Check",
+   "label": "on demande un conseil de prevention/vaccination"
+  },
+  {
+   "default": "0",
+   "fieldname": "autre_apr\u00e9ciser",
+   "fieldtype": "Check",
+   "label": "Autre (Apr\u00e9ciser......)"
+  },
+  {
+   "depends_on": "eval:doc.autre_apr\u00e9ciser==1",
+   "fieldname": "autre",
+   "fieldtype": "Small Text",
+   "label": "Autre "
+  },
+  {
+   "fieldname": "column_break_pgev",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "risque_bmr_section",
+   "fieldtype": "Section Break",
+   "label": "risque BMR "
+  },
+  {
+   "default": "0",
+   "fieldname": "votre_patient__a_\u00e9t\u00e9",
+   "fieldtype": "Check",
+   "label": "votre patient  a \u00e9t\u00e9 "
+  },
+  {
+   "default": "0",
+   "fieldname": "votre_patient",
+   "fieldtype": "Check",
+   "label": "votre patient?"
+  },
+  {
+   "default": "0",
+   "fieldname": "votre_patient_2",
+   "fieldtype": "Check",
+   "label": "votre patient 2"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "est_ce_que_votre_patient_a_une_allergie_connue_section",
+   "fieldtype": "Section Break",
+   "label": "est ce que votre patient a une allergie connue "
+  },
+  {
+   "default": "0",
+   "fieldname": "oui",
+   "fieldtype": "Check",
+   "label": "OUI"
+  },
+  {
+   "fieldname": "column_break_dcsx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "non",
+   "fieldtype": "Check",
+   "label": "NON"
+  },
+  {
+   "depends_on": "eval:doc.oui==1",
+   "fieldname": "section_break_hauo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.oui==1",
+   "fieldname": "column_break_boft",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "allergie_aux_b\u00e9talacamines__penicillines",
+   "fieldtype": "Check",
+   "label": "allergie aux b\u00e9talacamines ( Penicillines)"
+  },
+  {
+   "default": "0",
+   "fieldname": "autre_type_allergie",
+   "fieldtype": "Check",
+   "label": "Autre (Type allergie  )"
+  },
+  {
+   "depends_on": "eval:doc.autre_type_allergie==1",
+   "fieldname": "autre_type_aller",
+   "fieldtype": "Small Text",
+   "label": "Autre"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "\nDraft\nSubmitted\nCanceld\nAvis pr\u00e9ts\nAvis \u00e0 modifier\nAvis en cours",
+   "print_hide": 1,
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_lorn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "date"
+  },
+  {
+   "fieldname": "dr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "dr"
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Service "
+  },
+  {
+   "fieldname": "column_break_rssn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_iakp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cgch",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qfkx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_muuz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gofx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Patient et demande",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-14 12:54:07.109469",
+ "modified_by": "Administrator",
+ "module": "LINCA",
+ "name": "Patient et demande",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

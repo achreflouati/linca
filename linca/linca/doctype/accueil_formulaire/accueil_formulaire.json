@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-08 18:03:37.593020",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "dr",
+  "instituation",
+  "column_break_nqql",
+  "grade",
+  "service_dexercice_actuel",
+  "section_break_nbgd",
+  "numero_de_t\u00e9l\u00e9phone",
+  "section_break_ojpe",
+  "non_urgent",
+  "column_break_hwmx",
+  "urgent",
+  "column_break_otzb",
+  "extreme_urgent",
+  "section_break_zfne",
+  "remplir_la_demande"
+ ],
+ "fields": [
+  {
+   "fieldname": "dr",
+   "fieldtype": "Data",
+   "label": "DR."
+  },
+  {
+   "fieldname": "instituation",
+   "fieldtype": "Data",
+   "label": "Instituation"
+  },
+  {
+   "fieldname": "column_break_nqql",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Data",
+   "label": "Grade"
+  },
+  {
+   "fieldname": "service_dexercice_actuel",
+   "fieldtype": "Data",
+   "label": "Service d'exercice actuel"
+  },
+  {
+   "fieldname": "section_break_nbgd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "numero_de_t\u00e9l\u00e9phone",
+   "fieldtype": "Phone",
+   "label": "Numero de t\u00e9l\u00e9phone"
+  },
+  {
+   "fieldname": "section_break_ojpe",
+   "fieldtype": "Section Break",
+   "label": "Choisissez le degr\u00e9 d'urgence ad\u00e9quat a votre demande "
+  },
+  {
+   "default": "0",
+   "fieldname": "non_urgent",
+   "fieldtype": "Check",
+   "label": "Non Urgent "
+  },
+  {
+   "fieldname": "column_break_hwmx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "urgent",
+   "fieldtype": "Check",
+   "label": "Urgent"
+  },
+  {
+   "fieldname": "column_break_otzb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "extreme_urgent",
+   "fieldtype": "Check",
+   "label": "Extreme Urgent "
+  },
+  {
+   "fieldname": "section_break_zfne",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remplir_la_demande",
+   "fieldtype": "Button",
+   "label": "Remplir la demande "
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-08 18:08:59.909948",
+ "modified_by": "Administrator",
+ "module": "LINCA",
+ "name": "accueil formulaire",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
