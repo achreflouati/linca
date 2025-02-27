@@ -271,209 +271,212 @@
   {
    "fieldname": "service",
    "fieldtype": "Data",
-   "label": "service"
+   "hidden": 1,
+   "label": "Service "
   },
   {
-   "default": "0",
-   "fieldname": "nous_indiquons_darr\u00eater_une_hospitalisation",
-   "fieldtype": "Check",
-   "label": "Nous indiquons d'arr\u00eater une hospitalisation"
-  },
-  {
-   "default": "0",
-   "fieldname": "r\u00e9\u00e9valuer_\u00e0_j2j3j7_puis_nous_recontacter",
-   "fieldtype": "Check",
-   "label": "R\u00e9\u00e9valuer \u00e0 j2/j3/j7 puis nous recontacter"
-  },
-  {
-   "default": "0",
-   "fieldname": "surveillance_clinique",
-   "fieldtype": "Check",
-   "label": "Surveillance clinique"
-  },
-  {
-   "fieldname": "donn\u00e9es_\u00e0_surveiller",
-   "fieldtype": "Data",
-   "label": "Donn\u00e9es \u00e0 surveiller"
-  },
-  {
-   "default": "0",
-   "fieldname": "rdv_aux_consultations_externes_de_maladies_infectieuses",
-   "fieldtype": "Check",
-   "label": "RDV aux consultations externes de Maladies Infectieuses"
-  },
-  {
-   "fieldname": "date_rdv",
-   "fieldtype": "Date",
-   "label": "Date "
-  },
-  {
-   "default": "0",
-   "fieldname": "a_pr\u00e9senter_directement_\u00e0_lexpert",
-   "fieldtype": "Check",
-   "label": "A pr\u00e9senter directement \u00e0 l'expert"
-  },
-  {
-   "fieldname": "nom_expert",
-   "fieldtype": "Data",
-   "label": "Nom expert"
-  },
-  {
-   "default": "0",
-   "fieldname": "a_pr\u00e9senter_au_staff_de_maladies_infectieuses",
-   "fieldtype": "Check",
-   "label": "A pr\u00e9senter au staff de Maladies Infectieuses"
-  },
-  {
-   "fieldname": "date_staff_maladies_infectieuses",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
-   "default": "0",
-   "fieldname": "nous_recontacter",
-   "fieldtype": "Check",
-   "label": "Nous recontacter "
-  },
-  {
-   "fieldname": "date_rencontacter",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
-   "fieldname": "demandes_compl\u00e9mentaires_section",
+   "collapsible": 1,
+   "fieldname": "information_g\u00e9n\u00e9rale_section",
    "fieldtype": "Section Break",
-   "label": "Demandes compl\u00e9mentaires"
+   "label": "Information g\u00e9n\u00e9rale "
   },
   {
-   "default": "0",
-   "fieldname": "examen_compl\u00e9mentaire",
-   "fieldtype": "Check",
-   "label": "Examen compl\u00e9mentaire"
-  },
-  {
-   "fieldname": "text_kqkq",
-   "fieldtype": "Text"
-  },
-  {
-   "default": "0",
-   "fieldname": "avis_sp\u00e9cialis\u00e9",
-   "fieldtype": "Check",
-   "label": "Avis sp\u00e9cialis\u00e9"
-  },
-  {
-   "fieldname": "text_azef",
-   "fieldtype": "Text"
-  },
-  {
-   "default": "0",
-   "fieldname": "chirurgie",
-   "fieldtype": "Check",
-   "label": "Chirurgie"
-  },
-  {
-   "fieldname": "text_dogs",
-   "fieldtype": "Text"
-  },
-  {
-   "fieldname": "conseils_de_pr\u00e9vention_section",
-   "fieldtype": "Section Break",
-   "label": "Conseils de pr\u00e9vention"
-  },
-  {
-   "default": "0",
-   "fieldname": "pr\u00e9cautions_compl",
-   "fieldtype": "Check",
-   "label": "Pr\u00e9cautions compl."
-  },
-  {
-   "fieldname": "text_hqyw",
-   "fieldtype": "Text"
-  },
-  {
-   "default": "0",
-   "fieldname": "vactionations",
-   "fieldtype": "Check",
-   "label": "Vactionations"
-  },
-  {
-   "fieldname": "type_vaccin",
+   "fieldname": "pr\u00e9nom_du_patient",
    "fieldtype": "Data",
-   "label": "Type vaccin"
+   "label": "Pr\u00e9nom du patient "
   },
   {
-   "default": "0",
-   "fieldname": "isolement",
-   "fieldtype": "Check",
-   "label": "Isolement"
+   "fieldname": "column_break_aqef",
+   "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "protecteur",
-   "fieldtype": "Check",
-   "label": "Protecteur"
+   "fieldname": "nom_du_patient",
+   "fieldtype": "Data",
+   "label": "Nom du patient ",
+   "unique": 1
   },
   {
-   "default": "0",
-   "fieldname": "respiratoire",
-   "fieldtype": "Check",
-   "label": "Respiratoire"
+   "fieldname": "column_break_rssn",
+   "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "septique",
-   "fieldtype": "Check",
-   "label": "Septique"
+   "fieldname": "column_break_iakp",
+   "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "avertir_service_dhygi\u00e9ne",
-   "fieldtype": "Check",
-   "label": "Avertir service d'hygi\u00e9ne"
-  },
-  {
-   "fieldname": "modalit\u00e9s_de_r\u00e9ponse_section",
-   "fieldtype": "Section Break",
-   "label": "Modalit\u00e9s de r\u00e9ponse"
-  },
-  {
-   "default": "0",
-   "fieldname": "r\u00e9daction_sur_dossier_physique",
-   "fieldtype": "Check",
-   "label": "R\u00e9daction sur dossier physique"
-  },
-  {
-   "default": "0",
-   "fieldname": "r\u00e9daction_sur_dmi",
-   "fieldtype": "Check",
-   "label": "R\u00e9daction sur DMI"
-  },
-  {
-   "default": "0",
-   "fieldname": "discussion_t\u00e9l\u00e9phonique",
-   "fieldtype": "Check",
-   "label": "Discussion t\u00e9l\u00e9phonique"
-  },
-  {
-   "default": "0",
-   "fieldname": "d\u00e9placement_pou_\u00e9valuer_le_patient",
-   "fieldtype": "Check",
-   "label": "D\u00e9placement pou \u00e9valuer le patient"
-  },
-  {
-   "fieldname": "section_break_nfmt",
+   "fieldname": "section_break_cgch",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "pr\u00e9visualiser",
-   "fieldtype": "Button",
-   "label": "pr\u00e9visualiser"
+   "fieldname": "sexe",
+   "fieldtype": "Data",
+   "label": "Sexe "
   },
   {
-   "fieldname": "ref",
+   "fieldname": "column_break_qfkx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age "
+  },
+  {
+   "fieldname": "column_break_muuz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "taille_estimecm",
+   "fieldtype": "Float",
+   "label": "Taille (estime)CM"
+  },
+  {
+   "fieldname": "column_break_gofx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "poid_estim\u00e9_kg",
+   "fieldtype": "Float",
+   "label": "Poid (estim\u00e9) KG "
+  },
+  {
+   "fieldname": "section_break_eddq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "terrain",
+   "fieldtype": "Heading",
+   "label": "               Terrain"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "quel_est_le_motif_de_votre_demande__section",
+   "fieldtype": "Section Break",
+   "label": "Quel est le motif de votre demande ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_un_aide_au_diag",
+   "fieldtype": "Check",
+   "label": "on demande un aide au diag"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_une_aide_th\u00e9rapeutique",
+   "fieldtype": "Check",
+   "label": "on demande une aide th\u00e9rapeutique "
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_un_transfer_a_votre_service",
+   "fieldtype": "Check",
+   "label": "on demande un transfer a votre service "
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_un_conseil_de_preventionvaccination",
+   "fieldtype": "Check",
+   "label": "on demande un conseil de prevention/vaccination"
+  },
+  {
+   "default": "0",
+   "fieldname": "autre_apr\u00e9ciser",
+   "fieldtype": "Check",
+   "label": "Autre (Apr\u00e9ciser......)"
+  },
+  {
+   "depends_on": "eval:doc.autre_apr\u00e9ciser==1",
+   "fieldname": "autre",
+   "fieldtype": "Small Text",
+   "label": "Autre "
+  },
+  {
+   "fieldname": "column_break_pgev",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "risque_bmr_section",
+   "fieldtype": "Section Break",
+   "label": "risque BMR "
+  },
+  {
+   "default": "0",
+   "fieldname": "votre_patient__a_\u00e9t\u00e9",
+   "fieldtype": "Check",
+   "label": "votre patient  a \u00e9t\u00e9 "
+  },
+  {
+   "default": "0",
+   "fieldname": "votre_patient",
+   "fieldtype": "Check",
+   "label": "votre patient?"
+  },
+  {
+   "default": "0",
+   "fieldname": "votre_patient_2",
+   "fieldtype": "Check",
+   "label": "votre patient 2"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "est_ce_que_votre_patient_a_une_allergie_connue_section",
+   "fieldtype": "Section Break",
+   "label": "est ce que votre patient a une allergie connue "
+  },
+  {
+   "default": "0",
+   "fieldname": "oui",
+   "fieldtype": "Check",
+   "label": "OUI"
+  },
+  {
+   "fieldname": "column_break_dcsx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "non",
+   "fieldtype": "Check",
+   "label": "NON"
+  },
+  {
+   "depends_on": "eval:doc.oui==1",
+   "fieldname": "section_break_hauo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.oui==1",
+   "fieldname": "column_break_boft",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "allergie_aux_b\u00e9talacamines__penicillines",
+   "fieldtype": "Check",
+   "label": "allergie aux b\u00e9talacamines ( Penicillines)"
+  },
+  {
+   "default": "0",
+   "fieldname": "autre_type_allergie",
+   "fieldtype": "Check",
+   "label": "Autre (Type allergie  )"
+  },
+  {
+   "depends_on": "eval:doc.autre_type_allergie==1",
+   "fieldname": "autre_type_aller",
+   "fieldtype": "Small Text",
+   "label": "Autre"
+  },
+  {
+   "fieldname": "amended_from",
    "fieldtype": "Link",
-   "label": "ref",
-   "options": "Patient et demande"
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Patient et demande",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -500,5 +503,7 @@
  "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
 }

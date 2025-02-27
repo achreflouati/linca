@@ -101,3 +101,47 @@ frappe.listview_settings['Patient et demande'] = {
         }, "primary").addClass("btn-success");  // Ajouter un bouton dans la barre d'actions
     }
 };
+
+// Fonction pour afficher les détails dans un dialogue
+function openDetailsDialog(docname) {
+    frappe.call({
+        method: 'frappe.client.get',
+        args: {
+            doctype: 'Patient et demande',
+            name: docname
+        },
+        callback: function(response) {
+            let doc = response.message;
+            if (!doc) {
+                frappe.msgprint(__('Impossible de récupérer les données.'));
+                return;
+            }
+
+            // Construire dynamiquement la liste des champs
+            let fields = [];
+            for (let key in doc) {
+                if (doc.hasOwnProperty(key) && key !== 'doctype' && key !== 'name') {
+                    fields.push({
+                        label: frappe.model.unscrub(key),
+                        fieldname: key,
+                        fieldtype: 'Data',
+                        default: doc[key],
+                        read_only: 1
+                    });
+                }
+            }
+
+            let dialog = new frappe.ui.Dialog({
+                title: __('Détails du Patient et demande'),
+                size: 'large',
+                fields: fields,
+                primary_action_label: 'Fermer',
+                primary_action() {
+                    dialog.hide();
+                }
+            });
+
+            dialog.show();
+        }
+    });
+}
