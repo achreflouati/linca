@@ -6,38 +6,91 @@ frappe.ui.form.on("Patient et demande", {
             if (!frappe.user_roles.includes("Doctor")) {
                 // Add "Expertiser" button
                 frm.add_custom_button("Expertiser", () => {
+                    let dialog_fields = [
+                        {
+                            label: "Argumentaire",
+                            fieldname: "argumentaire",
+                            fieldtype: "Small Text",
+                            placeholder: "Saisir l'argumentaire"
+                        },
+                        {
+                            label: "Pas d'indication à débuter un traitement anti-infectieux",
+                            fieldname: "pas_dindication",
+                            fieldtype: "Check",
+                            default: 0
+                        },
+                        {
+                            label: "Arrêter un traitement antiinfectieux en cours",
+                            fieldname: "arreter_traitement",
+                            fieldtype: "Check",
+                            default: 0
+                        },
+                        {
+                            label: "Débuter un traitement antiinfectieux",
+                            fieldname: "debuter_traitement",
+                            fieldtype: "Check",
+                            default: 0
+                        },
+                        {
+                            label: "Molécule",
+                            fieldname: "molécule",
+                            fieldtype: "Select",
+                            options: ["Option 1", "Option 2", "Option 3"]
+                        },
+                        {
+                            label: "Voie d'administration",
+                            fieldname: "voie",
+                            fieldtype: "Select",
+                            options: ["Orale", "Intraveineuse", "Autre"]
+                        },
+                        {
+                            label: "Dose",
+                            fieldname: "dose",
+                            fieldtype: "Data"
+                        },
+                        {
+                            label: "Durée (jours)",
+                            fieldname: "duree",
+                            fieldtype: "Int"
+                        },
+                        {
+                            label: "Date de Rendez-vous",
+                            fieldname: "date_rdv",
+                            fieldtype: "Date"
+                        },
+                        {
+                            label: "Surveillance clinique",
+                            fieldname: "surveillance_clinique",
+                            fieldtype: "Check",
+                            default: 0
+                        }
+                    ];
                     let dialog = new frappe.ui.Dialog({
-                        title: "Informations supplémentaires",
-                        fields: [
-                            {
-                                label: "Nom du Patient",
-                                fieldname: "patient_name",
-                                fieldtype: "Data",
-                                reqd: 1
-                            },
-                            {
-                                label: "Date de rendez-vous",
-                                fieldname: "appointment_date",
-                                fieldtype: "Date",
-                                reqd: 1
-                            },
-                            {
-                                label: "Remarques",
-                                fieldname: "remarks",
-                                fieldtype: "Small Text"
-                            }
-                        ],
+                        title: "Saisie des informations d'Expertise",
+                        fields: dialog_fields,
+                            
                         primary_action_label: "Enregistrer",
                         primary_action(values) {
-                            // Action à exécuter lorsque l'utilisateur clique sur "Enregistrer"
-                            frappe.msgprint({
-                                title: "Confirmation",
-                                message: `Nom : ${values.patient_name}<br>Date : ${values.appointment_date}<br>Remarques : ${values.remarks}`,
-                                indicator: "green"
+                            frappe.call({
+                                method: "frappe.client.insert",
+                                args: {
+                                    doc: {
+                                        doctype: "Expert",
+                                        ref: frm.doc.name,
+                                        ...values
+                                    }
+                                },
+                                callback: function (response) {
+                                    if (!response.exc) {
+                                        frappe.msgprint("L'expertise a été enregistrée avec succès !");
+                                        dialog.hide();
+                                        // Mettre à jour le statut dans le doctype courant
+                                frm.set_value("status", "Avis préts");
+                                frm.save();
+                                    }
+                                }
                             });
-        
-                            // Fermer la popup
-                            dialog.hide();
+                            
                         }
                     });
         
@@ -79,22 +132,17 @@ frappe.ui.form.on("Patient et demande", {
                 }).addClass("btn-warning");
             }
         }
+        
 
-        // Call show_notes function
-        //frm.events.show_notes(frm);
+        
     },
+    
+    
+    
 
-    // show_notes(frm) {
-    //     if (frm.doc.docstatus !== 0) return;
-
-    //     // Initialize CRMNotes
-    //     const crm_notes = new CustomCRMNotes({
-    //         frm: frm,
-    //         notes_wrapper: $(frm.fields_dict.custom_notes_html.wrapper),
-    //     });
-    //     crm_notes.refresh();
-    // },
+    
 });
+
 
 // Custom CRMNotes Implementation
 // class CustomCRMNotes {

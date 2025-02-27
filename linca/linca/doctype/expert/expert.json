@@ -1,0 +1,504 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-11 01:35:59.467460",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "argumentaire",
+  "conduit_du_traitement_section",
+  "pas_dindication",
+  "arr\u00eater_un_traitement_antiinfectieux_en_cours",
+  "maintenir_le_m\u00eame_traitement_antiinfectieux_en_cours",
+  "d\u00e9buter_un_traitement__antiinfectieux",
+  "modifier_un_traitement_antiinfectieux_changer_lales_mol\u00e9cules",
+  "associer_un_traitement_antiinfectieux_ajouter_une_mol\u00e9cule",
+  "ajuster_la_posologie_dun_traitement_antiinfectieux",
+  "arr\u00eater_une_association_dantiinfectieux",
+  "antiinfectieux_section",
+  "al\u00e9rgie",
+  "column_break_xnnx",
+  "clairance",
+  "column_break_xdqf",
+  "poids",
+  "section_break_rljn",
+  "mol\u00e9cule",
+  "d\u00e9bute",
+  "modifier",
+  "custom_arrete",
+  "column_break_xela",
+  "voie",
+  "section_break_vlye",
+  "antiinfectieux",
+  "section_break_undf",
+  "column_break_nxmg",
+  "dose",
+  "column_break_ltmf",
+  "dur\u00e9e",
+  "section_break_nfxq",
+  "column_break_hdls",
+  "consignes",
+  "conduite_pratique_section",
+  "transf\u00e9rer_au_service_de_maladies_infectieuses",
+  "nous_indiquons_une_hospitalisation",
+  "service",
+  "nous_indiquons_darr\u00eater_une_hospitalisation",
+  "r\u00e9\u00e9valuer_\u00e0_j2j3j7_puis_nous_recontacter",
+  "surveillance_clinique",
+  "donn\u00e9es_\u00e0_surveiller",
+  "rdv_aux_consultations_externes_de_maladies_infectieuses",
+  "date_rdv",
+  "a_pr\u00e9senter_directement_\u00e0_lexpert",
+  "nom_expert",
+  "a_pr\u00e9senter_au_staff_de_maladies_infectieuses",
+  "date_staff_maladies_infectieuses",
+  "nous_recontacter",
+  "date_rencontacter",
+  "demandes_compl\u00e9mentaires_section",
+  "examen_compl\u00e9mentaire",
+  "text_kqkq",
+  "avis_sp\u00e9cialis\u00e9",
+  "text_azef",
+  "chirurgie",
+  "text_dogs",
+  "conseils_de_pr\u00e9vention_section",
+  "pr\u00e9cautions_compl",
+  "text_hqyw",
+  "vactionations",
+  "type_vaccin",
+  "isolement",
+  "protecteur",
+  "respiratoire",
+  "septique",
+  "avertir_service_dhygi\u00e9ne",
+  "modalit\u00e9s_de_r\u00e9ponse_section",
+  "r\u00e9daction_sur_dossier_physique",
+  "r\u00e9daction_sur_dmi",
+  "discussion_t\u00e9l\u00e9phonique",
+  "d\u00e9placement_pou_\u00e9valuer_le_patient",
+  "ref",
+  "section_break_nfmt",
+  "pr\u00e9visualiser"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "argumentaire",
+   "fieldtype": "Small Text",
+   "label": "Argumentaire ",
+   "placeholder": "Argumentaire "
+  },
+  {
+   "fieldname": "conduit_du_traitement_section",
+   "fieldtype": "Section Break",
+   "label": "Conduite du traitement "
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "0",
+   "fieldname": "pas_dindication",
+   "fieldtype": "Check",
+   "label": "Pas d'indication \u00e0 d\u00e9buter un traitement anti-infectieux"
+  },
+  {
+   "default": "0",
+   "fieldname": "arr\u00eater_un_traitement_antiinfectieux_en_cours",
+   "fieldtype": "Check",
+   "label": "Arr\u00eater un traitement antiinfectieux en cours"
+  },
+  {
+   "default": "0",
+   "fieldname": "maintenir_le_m\u00eame_traitement_antiinfectieux_en_cours",
+   "fieldtype": "Check",
+   "label": "Maintenir le m\u00eame traitement antiinfectieux en cours"
+  },
+  {
+   "default": "0",
+   "fieldname": "d\u00e9buter_un_traitement__antiinfectieux",
+   "fieldtype": "Check",
+   "label": "D\u00e9buter un traitement  antiinfectieux"
+  },
+  {
+   "default": "0",
+   "fieldname": "modifier_un_traitement_antiinfectieux_changer_lales_mol\u00e9cules",
+   "fieldtype": "Check",
+   "label": "Modifier un traitement antiinfectieux (Changer la/les mol\u00e9cule(s))"
+  },
+  {
+   "default": "0",
+   "fieldname": "associer_un_traitement_antiinfectieux_ajouter_une_mol\u00e9cule",
+   "fieldtype": "Check",
+   "label": "Associer un traitement antiinfectieux (Ajouter une mol\u00e9cule)"
+  },
+  {
+   "default": "0",
+   "fieldname": "ajuster_la_posologie_dun_traitement_antiinfectieux",
+   "fieldtype": "Check",
+   "label": "Ajuster la posologie d'un traitement antiinfectieux "
+  },
+  {
+   "default": "0",
+   "fieldname": "arr\u00eater_une_association_dantiinfectieux",
+   "fieldtype": "Check",
+   "label": "Arr\u00eater une association d'antiinfectieux "
+  },
+  {
+   "fieldname": "antiinfectieux_section",
+   "fieldtype": "Section Break",
+   "label": "antiinfectieux"
+  },
+  {
+   "fieldname": "al\u00e9rgie",
+   "fieldtype": "Data",
+   "label": "al\u00e9rgie"
+  },
+  {
+   "fieldname": "clairance",
+   "fieldtype": "Data",
+   "label": "Clairance"
+  },
+  {
+   "fieldname": "poids",
+   "fieldtype": "Data",
+   "label": "Poids"
+  },
+  {
+   "fieldname": "column_break_xnnx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xdqf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rljn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mol\u00e9cule",
+   "fieldtype": "Select",
+   "label": "Mol\u00e9cule"
+  },
+  {
+   "fieldname": "column_break_xela",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "voie",
+   "fieldtype": "Select",
+   "label": "Voie"
+  },
+  {
+   "fieldname": "column_break_nxmg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dose",
+   "fieldtype": "Data",
+   "label": "Dose"
+  },
+  {
+   "fieldname": "dur\u00e9e",
+   "fieldtype": "Data",
+   "label": "Dur\u00e9e"
+  },
+  {
+   "fieldname": "column_break_hdls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "consignes",
+   "fieldtype": "Select",
+   "label": "Consignes"
+  },
+  {
+   "fieldname": "section_break_undf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ltmf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_nfxq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "d\u00e9bute",
+   "fieldtype": "Check",
+   "label": "d\u00e9buter"
+  },
+  {
+   "default": "0",
+   "fieldname": "modifier",
+   "fieldtype": "Check",
+   "label": "modifier "
+  },
+  {
+   "default": "0",
+   "fieldname": "custom_arrete",
+   "fieldtype": "Check",
+   "label": "Arr\u00eater"
+  },
+  {
+   "fieldname": "section_break_vlye",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "antiinfectieux",
+   "fieldtype": "Table",
+   "label": "antiinfectieux",
+   "options": "child anti-infectieux"
+  },
+  {
+   "fieldname": "conduite_pratique_section",
+   "fieldtype": "Section Break",
+   "label": "Conduite pratique"
+  },
+  {
+   "default": "0",
+   "fieldname": "transf\u00e9rer_au_service_de_maladies_infectieuses",
+   "fieldtype": "Check",
+   "label": "Transf\u00e9rer au service de Maladies Infectieuses"
+  },
+  {
+   "default": "0",
+   "fieldname": "nous_indiquons_une_hospitalisation",
+   "fieldtype": "Check",
+   "label": "Nous indiquons une hospitalisation"
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Data",
+   "label": "service"
+  },
+  {
+   "default": "0",
+   "fieldname": "nous_indiquons_darr\u00eater_une_hospitalisation",
+   "fieldtype": "Check",
+   "label": "Nous indiquons d'arr\u00eater une hospitalisation"
+  },
+  {
+   "default": "0",
+   "fieldname": "r\u00e9\u00e9valuer_\u00e0_j2j3j7_puis_nous_recontacter",
+   "fieldtype": "Check",
+   "label": "R\u00e9\u00e9valuer \u00e0 j2/j3/j7 puis nous recontacter"
+  },
+  {
+   "default": "0",
+   "fieldname": "surveillance_clinique",
+   "fieldtype": "Check",
+   "label": "Surveillance clinique"
+  },
+  {
+   "fieldname": "donn\u00e9es_\u00e0_surveiller",
+   "fieldtype": "Data",
+   "label": "Donn\u00e9es \u00e0 surveiller"
+  },
+  {
+   "default": "0",
+   "fieldname": "rdv_aux_consultations_externes_de_maladies_infectieuses",
+   "fieldtype": "Check",
+   "label": "RDV aux consultations externes de Maladies Infectieuses"
+  },
+  {
+   "fieldname": "date_rdv",
+   "fieldtype": "Date",
+   "label": "Date "
+  },
+  {
+   "default": "0",
+   "fieldname": "a_pr\u00e9senter_directement_\u00e0_lexpert",
+   "fieldtype": "Check",
+   "label": "A pr\u00e9senter directement \u00e0 l'expert"
+  },
+  {
+   "fieldname": "nom_expert",
+   "fieldtype": "Data",
+   "label": "Nom expert"
+  },
+  {
+   "default": "0",
+   "fieldname": "a_pr\u00e9senter_au_staff_de_maladies_infectieuses",
+   "fieldtype": "Check",
+   "label": "A pr\u00e9senter au staff de Maladies Infectieuses"
+  },
+  {
+   "fieldname": "date_staff_maladies_infectieuses",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "nous_recontacter",
+   "fieldtype": "Check",
+   "label": "Nous recontacter "
+  },
+  {
+   "fieldname": "date_rencontacter",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "demandes_compl\u00e9mentaires_section",
+   "fieldtype": "Section Break",
+   "label": "Demandes compl\u00e9mentaires"
+  },
+  {
+   "default": "0",
+   "fieldname": "examen_compl\u00e9mentaire",
+   "fieldtype": "Check",
+   "label": "Examen compl\u00e9mentaire"
+  },
+  {
+   "fieldname": "text_kqkq",
+   "fieldtype": "Text"
+  },
+  {
+   "default": "0",
+   "fieldname": "avis_sp\u00e9cialis\u00e9",
+   "fieldtype": "Check",
+   "label": "Avis sp\u00e9cialis\u00e9"
+  },
+  {
+   "fieldname": "text_azef",
+   "fieldtype": "Text"
+  },
+  {
+   "default": "0",
+   "fieldname": "chirurgie",
+   "fieldtype": "Check",
+   "label": "Chirurgie"
+  },
+  {
+   "fieldname": "text_dogs",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "conseils_de_pr\u00e9vention_section",
+   "fieldtype": "Section Break",
+   "label": "Conseils de pr\u00e9vention"
+  },
+  {
+   "default": "0",
+   "fieldname": "pr\u00e9cautions_compl",
+   "fieldtype": "Check",
+   "label": "Pr\u00e9cautions compl."
+  },
+  {
+   "fieldname": "text_hqyw",
+   "fieldtype": "Text"
+  },
+  {
+   "default": "0",
+   "fieldname": "vactionations",
+   "fieldtype": "Check",
+   "label": "Vactionations"
+  },
+  {
+   "fieldname": "type_vaccin",
+   "fieldtype": "Data",
+   "label": "Type vaccin"
+  },
+  {
+   "default": "0",
+   "fieldname": "isolement",
+   "fieldtype": "Check",
+   "label": "Isolement"
+  },
+  {
+   "default": "0",
+   "fieldname": "protecteur",
+   "fieldtype": "Check",
+   "label": "Protecteur"
+  },
+  {
+   "default": "0",
+   "fieldname": "respiratoire",
+   "fieldtype": "Check",
+   "label": "Respiratoire"
+  },
+  {
+   "default": "0",
+   "fieldname": "septique",
+   "fieldtype": "Check",
+   "label": "Septique"
+  },
+  {
+   "default": "0",
+   "fieldname": "avertir_service_dhygi\u00e9ne",
+   "fieldtype": "Check",
+   "label": "Avertir service d'hygi\u00e9ne"
+  },
+  {
+   "fieldname": "modalit\u00e9s_de_r\u00e9ponse_section",
+   "fieldtype": "Section Break",
+   "label": "Modalit\u00e9s de r\u00e9ponse"
+  },
+  {
+   "default": "0",
+   "fieldname": "r\u00e9daction_sur_dossier_physique",
+   "fieldtype": "Check",
+   "label": "R\u00e9daction sur dossier physique"
+  },
+  {
+   "default": "0",
+   "fieldname": "r\u00e9daction_sur_dmi",
+   "fieldtype": "Check",
+   "label": "R\u00e9daction sur DMI"
+  },
+  {
+   "default": "0",
+   "fieldname": "discussion_t\u00e9l\u00e9phonique",
+   "fieldtype": "Check",
+   "label": "Discussion t\u00e9l\u00e9phonique"
+  },
+  {
+   "default": "0",
+   "fieldname": "d\u00e9placement_pou_\u00e9valuer_le_patient",
+   "fieldtype": "Check",
+   "label": "D\u00e9placement pou \u00e9valuer le patient"
+  },
+  {
+   "fieldname": "section_break_nfmt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pr\u00e9visualiser",
+   "fieldtype": "Button",
+   "label": "pr\u00e9visualiser"
+  },
+  {
+   "fieldname": "ref",
+   "fieldtype": "Link",
+   "label": "ref",
+   "options": "Patient et demande"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-11 13:36:00.940864",
+ "modified_by": "Administrator",
+ "module": "LINCA",
+ "name": "Expert",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
