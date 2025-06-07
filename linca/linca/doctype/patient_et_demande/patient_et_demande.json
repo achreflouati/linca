@@ -58,6 +58,7 @@
    "label": "Information g\u00e9n\u00e9rale "
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "pr\u00e9nom_du_patient",
    "fieldtype": "Data",
    "label": "Pr\u00e9nom du patient "
@@ -67,32 +68,38 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "nom_du_patient",
    "fieldtype": "Data",
    "label": "Nom du patient ",
    "unique": 1
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "age",
    "fieldtype": "Int",
    "label": "Age "
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "sexe",
    "fieldtype": "Data",
    "label": "Sexe "
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "poid_estim\u00e9_kg",
    "fieldtype": "Float",
    "label": "Poid (estim\u00e9) KG "
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "taille_estimecm",
    "fieldtype": "Float",
    "label": "Taille (estime)CM"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "section_break_eddq",
    "fieldtype": "Section Break"
   },
@@ -102,42 +109,49 @@
    "label": "               Terrain"
   },
   {
+   "allow_in_quick_entry": 1,
    "collapsible": 1,
    "fieldname": "quel_est_le_motif_de_votre_demande__section",
    "fieldtype": "Section Break",
    "label": "Quel est le motif de votre demande ?"
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "on_demande_un_aide_au_diag",
    "fieldtype": "Check",
    "label": "on demande un aide au diag"
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "on_demande_une_aide_th\u00e9rapeutique",
    "fieldtype": "Check",
    "label": "on demande une aide th\u00e9rapeutique "
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "on_demande_un_transfer_a_votre_service",
    "fieldtype": "Check",
    "label": "on demande un transfer a votre service "
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "on_demande_un_conseil_de_preventionvaccination",
    "fieldtype": "Check",
    "label": "on demande un conseil de prevention/vaccination"
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "autre_apr\u00e9ciser",
    "fieldtype": "Check",
    "label": "Autre (Apr\u00e9ciser......)"
   },
   {
+   "allow_in_quick_entry": 1,
    "depends_on": "eval:doc.autre_apr\u00e9ciser==1",
    "fieldname": "autre",
    "fieldtype": "Small Text",
@@ -148,36 +162,42 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_in_quick_entry": 1,
    "collapsible": 1,
    "fieldname": "risque_bmr_section",
    "fieldtype": "Section Break",
    "label": "risque BMR "
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "votre_patient__a_\u00e9t\u00e9",
    "fieldtype": "Check",
    "label": "votre patient  a \u00e9t\u00e9 "
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "votre_patient",
    "fieldtype": "Check",
    "label": "votre patient?"
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "votre_patient_2",
    "fieldtype": "Check",
    "label": "votre patient 2"
   },
   {
+   "allow_in_quick_entry": 1,
    "collapsible": 1,
    "fieldname": "est_ce_que_votre_patient_a_une_allergie_connue_section",
    "fieldtype": "Section Break",
    "label": "est ce que votre patient a une allergie connue "
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "oui",
    "fieldtype": "Check",
@@ -188,12 +208,14 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "non",
    "fieldtype": "Check",
    "label": "NON"
   },
   {
+   "allow_in_quick_entry": 1,
    "depends_on": "eval:doc.oui==1",
    "fieldname": "section_break_hauo",
    "fieldtype": "Section Break"
@@ -204,18 +226,21 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "allergie_aux_b\u00e9talacamines__penicillines",
    "fieldtype": "Check",
    "label": "allergie aux b\u00e9talacamines ( Penicillines)"
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "0",
    "fieldname": "autre_type_allergie",
    "fieldtype": "Check",
    "label": "Autre (Type allergie  )"
   },
   {
+   "allow_in_quick_entry": 1,
    "depends_on": "eval:doc.autre_type_allergie==1",
    "fieldname": "autre_type_aller",
    "fieldtype": "Small Text",
@@ -230,7 +255,7 @@
    "in_standard_filter": 1,
    "label": "Status",
    "no_copy": 1,
-   "options": "\nDraft\nSubmitted\nCanceld\nAvis pr\u00e9ts\nAvis \u00e0 modifier\nAvis en cours",
+   "options": "\nDraft\nSubmitted\nCanceled\nAvis \u00e0 s\u00e9nioriser\nAvis pr\u00e9ts\nAvis \u00e0 modifier\nAvis en cours\nAvis mis \u00e0 jour\nAvis final",
    "print_hide": 1,
    "read_only": 1,
    "reqd": 1,
@@ -295,7 +320,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-14 12:54:07.109469",
+ "modified": "2025-04-14 16:53:49.460918",
  "modified_by": "Administrator",
  "module": "LINCA",
  "name": "Patient et demande",
@@ -315,6 +340,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

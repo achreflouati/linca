@@ -2,7 +2,22 @@ import frappe
 from frappe.model.document import Document
 
 class Patientetdemande(Document):
-    pass
+
+    
+    def on_update(self):
+        #frappe.msgprint("on_update")
+        user = frappe.session.user
+
+        if self.status == "Avis en cours" and "Doctor" not in frappe.get_roles(user):
+            self.status = "Avis à modifier"
+          
+            self.save(ignore_permissions=True)
+
+        elif self.status == "Avis à modifier" and "Doctor" in frappe.get_roles(user):
+            self.custom_modification_count = (self.custom_modification_count or 0) + 1
+            self.status = "Avis en cours"
+            self.save(ignore_permissions=True)
+
 
 @frappe.whitelist()  # Permet à la fonction d'être appelée depuis le client
 def get_expertise_details(ref):

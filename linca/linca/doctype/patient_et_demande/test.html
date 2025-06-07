@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+            }
+            .section h3 {
+                background-color: #0097e3;
+                color: white;
+                text-align: center;
+                border-radius: 10px;
+                padding:10px;
+                margin: 50px 0px;
+            }
+            h2 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        
+            .section p:not(.checkbox-item):not(.yn-subcontainer):not(.data-text-area):not(.data-text-area p) {
+                background-color: #0097e3;
+                border-radius: 10px;
+                padding: 1px 10px;
+                /*display: inline-block; /* Ajuste la largeur au contenu */
+                /*max-width: 100%; /* Empêche le débordement si le texte est trop long */
+            }
+            
+            .section p:not(.checkbox-item):not(.patient-data){
+                /*display: inline-block; /* Ajuste la largeur au contenu */
+                max-width: 100%; /* Empêche le débordement si le texte est trop long */
+            }
+            
+            .section div:not(.yn-container):not(.yn-subcontainer) {
+                margin: 20px 2px 20px 2px;
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            .checkbox {
+                margin-right: 10px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+            }
+            th, td {
+                border: 1px solid #000;
+                padding: 8px;
+                text-align: left;
+            }
+            .checkbox-container {
+                display: inline-block;
+                margin-right: 20px; /* Espace entre les éléments */
+            }
+            .checkbox-item {
+                display: flex;
+                justify-content: space-between; /* Espacement entre le texte et la case à cocher */
+                align-items: center; /* Aligne verticalement les éléments */
+                margin-bottom: 10px; /* Espacement entre les éléments */
+            }
+            
+            .checkbox-item span {
+                margin: 0px 0px 5px 20px; /* Prend toute la largeur disponible sauf celle de la case à cocher */
+            }
+            
+            .checkbox {
+                margin-left: 10px; /* Marge entre le texte et la case à cocher */
+            }
+        
+        /* Case à cocher colorée si la valeur est 1 */
+            .checkbox-checked {
+                background-color: black;
+                border: 2px solid black;
+            }
+            
+            .yn-container {
+                display: flex;
+                align-items: center; /* Aligner verticalement */
+                justify-content: space-between; /* Sépare le texte et les checkboxes */
+                width: 100%;
+            }
+            
+            .yn-container strong {
+                background-color: #0097e3;
+                border-radius: 10px;
+                padding: 5px 10px;
+                white-space: nowrap; /* Empêche le texte de passer à la ligne */
+            }
+            
+            .yn-group {
+                display: flex;
+                gap: 20px; /* Espacement entre les options Mineur/Majeur */
+            }
+            
+            .yn-subcontainer {
+                display: flex;
+                align-items: center; /* Aligner verticalement */
+                justify-content: space-between; /* Sépare le texte et les checkboxes */
+                width: 100%;
+            }
+            
+            .yn-subcontainer span {
+                white-space: nowrap; /* Empêche le texte de passer à la ligne */        
+                margin: 0px 0px 5px 20px;            
+            }
+            
+            .yn-subgroup {
+                display: flex;
+                gap: 20px; /* Espacement entre les options Mineur/Majeur */
+            }
+            
+            .data-text-area {
+                border: 1px solid #ccc; 
+                border-radius: 5px; 
+                padding: 5px;
+            }
+            
+            /* Retirer la couleur de fond pour les <p> à l'intérieur de .data-text-area .ql-editor */
+            .data-text-area .ql-editor p {
+                background-color: transparent; /* Retirer la couleur de fond */
+                padding: 0; /* Optionnel : Ajuste le padding à 0 pour éviter tout espace supplémentaire */
+            }
+            
+            .info-table {
+                width: 100%; /* Prend toute la largeur */
+                border-collapse: collapse; /* Fusionne les bordures */
+                text-align: center;
+            }
+            
+            .info-table th, .info-table td {
+                border: none;
+                padding: 10px; /* Espacement interne */
+                width: 25%; /* Chaque colonne prend 25% */
+            }
+
+            .info-table {
+                width: 100%; /* Prend toute la largeur */
+                border-collapse: collapse; /* Fusionne les bordures */
+                table-layout: fixed; /* Assure que toutes les colonnes ont la même largeur */
+            }
+            
+            .info-item {
+                text-align: center;
+                padding: 10px; /* Espacement interne */
+                width: 25%; /* Chaque élément prend 25% de la largeur */
+                box-sizing: border-box; /* Assure que le padding n'affecte pas la largeur */
+            }
+            
+            .info-item strong {
+                font-size: 13px;
+                border-radius: 6px;
+                background-color: #0097e3;
+                display: block; /* Assure que le titre est sur une ligne séparée */
+                margin-bottom: 5px;
+            }
+            
+            .info-item p {
+                margin-top: 0;
+                font-size: 10px; /* Taille de la police ajustée */
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="section">
+            <h3>Informations Générales</h3>
+            <p class="patient-data"><strong>Prénom du patient :</strong> </p>
+            <p class="patient-data"><strong>Nom du patient :</strong> </p>
+        </div>
+    </body>
+</html>

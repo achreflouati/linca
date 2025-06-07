@@ -3,14 +3,22 @@ frappe.listview_settings['Patient et demande'] = {
     get_indicator: function(doc) {
         var colors = {
             'Avis préts': 'green',
-            'Avis à modifier': 'red',
-            'Avis en cours': 'orange',
-            'Draft': 'brown',
+            'Avis à modifier': 'orange',
+            'Avis en cours': 'red',
+            'Avis mis à jour': 'blue',
+            'Avis à sénioriser': 'red',
+            'Draft': 'brown'
         };
-        return [__(doc.status), colors[doc.status], 'status,=,' + doc.status];
+        
+        if (colors[doc.status]) {
+            return [__(doc.status), colors[doc.status], 'status,=,' + doc.status];
+        } else {
+            // Retourne un indicateur par défaut si le statut n'est pas dans la liste
+            return [__(doc.status), 'gray', 'status,=,' + doc.status];
+        }
     },
 
-    onload: function(listview) {
+    /*  onload: function(listview) {
         listview.page.add_button("Show Expertise", function() {
             let selected = listview.get_checked_items(); // Obtenir les éléments sélectionnés
             
@@ -99,9 +107,8 @@ frappe.listview_settings['Patient et demande'] = {
                 }
             });
         }, "primary").addClass("btn-success");  // Ajouter un bouton dans la barre d'actions
-    }
+    } */
 };
-
 // Fonction pour afficher les détails dans un dialogue
 function openDetailsDialog(docname) {
     frappe.call({

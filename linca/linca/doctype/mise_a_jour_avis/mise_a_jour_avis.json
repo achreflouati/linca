@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-27 01:09:58.596335",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "quel_est_le_motif_de_votre_demande_section",
+  "on_demande_une_aide_au_diagnostic",
+  "on_demande_une_aide_th\u00e9rapeutique",
+  "on_demande_un_transfert_a_votre_service",
+  "on_demande_un_conseil_de_pr\u00e9ventionvaccination",
+  "autre_a_pr\u00e9ciser_",
+  "small_text_ycyw",
+  "evolution_section",
+  "ecrivez_bri\u00e9vement_comment",
+  "multiple_images",
+  "images",
+  "ref",
+  "ref_expertise"
+ ],
+ "fields": [
+  {
+   "fieldname": "quel_est_le_motif_de_votre_demande_section",
+   "fieldtype": "Section Break",
+   "label": "Quel est le motif de votre demande"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_une_aide_au_diagnostic",
+   "fieldtype": "Check",
+   "label": "On demande une aide au diagnostic"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_une_aide_th\u00e9rapeutique",
+   "fieldtype": "Check",
+   "label": "On demande une aide th\u00e9rapeutique"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_un_transfert_a_votre_service",
+   "fieldtype": "Check",
+   "label": "On demande un transfert a votre service "
+  },
+  {
+   "default": "0",
+   "fieldname": "on_demande_un_conseil_de_pr\u00e9ventionvaccination",
+   "fieldtype": "Check",
+   "label": "On demande un conseil de pr\u00e9vention/Vaccination "
+  },
+  {
+   "default": "0",
+   "fieldname": "autre_a_pr\u00e9ciser_",
+   "fieldtype": "Check",
+   "label": "Autre (A pr\u00e9ciser ...)"
+  },
+  {
+   "fieldname": "small_text_ycyw",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "evolution_section",
+   "fieldtype": "Section Break",
+   "label": "Evolution "
+  },
+  {
+   "fieldname": "ecrivez_bri\u00e9vement_comment",
+   "fieldtype": "Small Text",
+   "label": "Ecrivez bri\u00e8vement comment a \u00e9vouluer votre patient, l'\u00e9xamen clinique actuel,et les nouvelles donn\u00e9es de biologie"
+  },
+  {
+   "fieldname": "multiple_images",
+   "fieldtype": "HTML",
+   "label": "image"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Text",
+   "hidden": 1,
+   "label": "Liste des images"
+  },
+  {
+   "fieldname": "ref",
+   "fieldtype": "Link",
+   "label": "ref",
+   "options": "Patient et demande"
+  },
+  {
+   "fieldname": "ref_expertise",
+   "fieldtype": "Link",
+   "label": "Ref expertise",
+   "options": "Expert"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-08 10:14:35.070577",
+ "modified_by": "Administrator",
+ "module": "LINCA",
+ "name": "Mise a jour avis",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

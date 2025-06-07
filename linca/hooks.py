@@ -28,7 +28,10 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/linca/css/linca.css"
-# app_include_js = "/assets/linca/js/linca.js"
+app_include_js = [
+    "/assets/linca/js/display_sidebar_menus.js",
+    "/assets/linca/js/utils.js"
+]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/linca/css/linca.css"
@@ -177,9 +180,15 @@ app_license = "mit"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "linca.event.get_events"
+# 	"frappe.core.doctype.user.user.sign_up": "linca.utils.custom.sign_up"
 # }
 #
+# patches = [
+#     "linca.utils.custom"  # Path complet vers la fonction patchée
+# ]
+translations = {
+    "fr": "linca.translations.fr.csv"
+}
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps

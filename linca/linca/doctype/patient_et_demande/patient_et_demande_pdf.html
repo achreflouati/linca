@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+            }
+            .section h3 {
+                background-color: #0097e3;
+                color: white;
+                text-align: center;
+                border-radius: 10px;
+                padding:10px;
+                margin: 50px 0px;
+            }
+            h2 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        
+            .section p:not(.checkbox-item):not(.yn-subcontainer):not(.data-text-area):not(.data-text-area p) {
+                background-color: #0097e3;
+                border-radius: 10px;
+                padding: 1px 10px;
+                /*display: inline-block; /* Ajuste la largeur au contenu */
+                /*max-width: 100%; /* Empêche le débordement si le texte est trop long */
+            }
+            
+            .section p:not(.checkbox-item):not(.patient-data){
+                /*display: inline-block; /* Ajuste la largeur au contenu */
+                max-width: 100%; /* Empêche le débordement si le texte est trop long */
+            }
+            
+            .section div:not(.yn-container):not(.yn-subcontainer) {
+                margin: 20px 2px 20px 2px;
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            .checkbox {
+                margin-right: 10px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+            }
+            th, td {
+                border: 1px solid #000;
+                padding: 8px;
+                text-align: left;
+            }
+            .checkbox-container {
+                display: inline-block;
+                margin-right: 20px; /* Espace entre les éléments */
+            }
+            .checkbox-item {
+                display: flex;
+                justify-content: space-between; /* Espacement entre le texte et la case à cocher */
+                align-items: center; /* Aligne verticalement les éléments */
+                margin-bottom: 10px; /* Espacement entre les éléments */
+            }
+            
+            .checkbox-item span {
+                margin: 0px 0px 5px 20px; /* Prend toute la largeur disponible sauf celle de la case à cocher */
+            }
+            
+            .checkbox {
+                margin-left: 10px; /* Marge entre le texte et la case à cocher */
+            }
+        
+        /* Case à cocher colorée si la valeur est 1 */
+            .checkbox-checked {
+                background-color: black;
+                border: 2px solid black;
+            }
+            
+            .yn-container {
+                display: flex;
+                align-items: center; /* Aligner verticalement */
+                justify-content: space-between; /* Sépare le texte et les checkboxes */
+                width: 100%;
+            }
+            
+            .yn-container strong {
+                background-color: #0097e3;
+                border-radius: 10px;
+                padding: 5px 10px;
+                white-space: nowrap; /* Empêche le texte de passer à la ligne */
+            }
+            
+            .yn-group {
+                display: flex;
+                gap: 20px; /* Espacement entre les options Mineur/Majeur */
+            }
+            
+            .yn-subcontainer {
+                display: flex;
+                align-items: center; /* Aligner verticalement */
+                justify-content: space-between; /* Sépare le texte et les checkboxes */
+                width: 100%;
+            }
+            
+            .yn-subcontainer span {
+                white-space: nowrap; /* Empêche le texte de passer à la ligne */        
+                margin: 0px 0px 5px 20px;            
+            }
+            
+            .yn-subgroup {
+                display: flex;
+                gap: 20px; /* Espacement entre les options Mineur/Majeur */
+            }
+            
+            .data-text-area {
+                border: 1px solid #ccc; 
+                border-radius: 5px; 
+                padding: 5px;
+            }
+            
+            /* Retirer la couleur de fond pour les <p> à l'intérieur de .data-text-area .ql-editor */
+            .data-text-area .ql-editor p {
+                background-color: transparent; /* Retirer la couleur de fond */
+                padding: 0; /* Optionnel : Ajuste le padding à 0 pour éviter tout espace supplémentaire */
+            }
+            
+            .info-table {
+                width: 100%; /* Prend toute la largeur */
+                border-collapse: collapse; /* Fusionne les bordures */
+                text-align: center;
+            }
+            
+            .info-table th, .info-table td {
+                border: none;
+                padding: 10px; /* Espacement interne */
+                width: 25%; /* Chaque colonne prend 25% */
+            }
+
+            .info-table {
+                width: 100%; /* Prend toute la largeur */
+                border-collapse: collapse; /* Fusionne les bordures */
+                table-layout: fixed; /* Assure que toutes les colonnes ont la même largeur */
+            }
+            
+            .info-item {
+                text-align: center;
+                padding: 10px; /* Espacement interne */
+                width: 25%; /* Chaque élément prend 25% de la largeur */
+                box-sizing: border-box; /* Assure que le padding n'affecte pas la largeur */
+            }
+            
+            .info-item strong {
+                font-size: 13px;
+                border-radius: 6px;
+                background-color: #0097e3;
+                display: block; /* Assure que le titre est sur une ligne séparée */
+                margin-bottom: 5px;
+            }
+            
+            .info-item p {
+                margin-top: 0;
+                font-size: 10px; /* Taille de la police ajustée */
+            }
+
+             /* Style des boutons */
+            .popup-actions {
+                display: flex;
+                flex-direction: column; /* Affiche les enfants sur deux lignes */
+                align-items: center; /* Centre les conteneurs horizontalement */
+                width: 100%;
+                padding-top: 5px;
+                margin-top: 20px;
+                gap: 10px; /* Optionnel : espace entre les deux conteneurs */
+            }
+            
+            .popup-actions button {
+                padding: 12px 20px;
+                border-radius: 6px;
+                font-weight: bold;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin: 5px;
+                height: 50px; /* hauteur fixe */
+                font-size: clamp(12px, 1.2vw, 16px); /* adapte la taille de police */
+                align-items: center;
+                text-align: center;
+                white-space: normal; /* permet le retour à la ligne si nécessaire */
+            }
+
+            .send-container {
+                margin-bottom: 20px;
+                text-align: center;
+                width: 100%;
+            }
+
+            .other-buttons {
+                display: flex;
+                gap: 20px; /* espacement entre les boutons */
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .edit-btn { 
+                width: 20%;
+                min-width: 120px;
+                background-color: #fd7e14; 
+            }
+            .edit-btn:hover { 
+                width: 20%;
+                min-width: 120px;
+                background-color: #e87719; 
+            }
+
+            .export-btn { 
+                width: 20%;
+                min-width: 120px;
+                background-color: #28a745; 
+            }
+            .export-btn:hover { 
+                width: 20%;
+                min-width: 120px;
+                background-color: #218838; 
+            }
+
+            .send-btn { 
+                width: 20%;
+                min-width: 120px;
+                background-color: #ffc107; 
+            }
+            .send-btn:hover { 
+                width: 20%;
+                min-width: 120px;
+                background-color: #e0a800; 
+            }
+
+            .draft-btn { 
+                width: 20%;
+                min-width: 120px;
+                background-color:rgb(82, 82, 85); 
+            }
+            .draft-btn:hover { 
+                width: 20%;
+                min-width: 120px;
+                background-color:rgb(74, 74, 78); 
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="section">
+            <h3>Informations Générales</h3>
+            <p class="patient-data"><strong>Prénom du patient :</strong> </p>
+            <div>{{ doc.prénom_du_patient }}</div>
+            <p class="patient-data"><strong>Nom du patient :</strong> </p>
+            <div>{{ doc.nom_du_patient }}</div>
+            <table class="info-table">
+                <tr>
+                    <td class="info-item">
+                        <strong>Âge</strong>
+                        <div>{{ doc.age }} ans</div>
+                    </td>
+                    <td class="info-item">
+                        <strong>Sexe</strong>
+                        <div>{{ doc.sexe }}</div>
+                    </td>
+                    <td class="info-item">
+                        <strong>Taille (estimée)</strong>
+                        <div>{{ doc.taille_estimecm }} cm</div>
+                    </td>
+                    <td class="info-item">
+                        <strong>Poids (estimé)</strong>
+                        <div>{{ doc.poid_estimé_kg }} kg</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="section">
+            <h3>Terrain</h3>
+            <p><strong>Quel est le motif de votre demande ?</strong></p>
+            <p class="checkbox-item">
+                <span>On demande un aide au diag</span>
+                <input type="checkbox" class="checkbox {% if doc.on_demande_un_aide_au_diag == 1 %}checkbox-checked{% endif %}">
+            </p>
+            
+            <p class="checkbox-item">
+                <span>On demande une aide thérapeutique</span>
+                <input type="checkbox" class="checkbox {% if doc.on_demande_une_aide_thérapeutique == 1 %}checkbox-checked{% endif %}">
+            </p>
+            
+            <p class="checkbox-item">
+                <span>On demande un transfert à votre service</span>
+                <input type="checkbox" class="checkbox {% if doc.on_demande_un_transfer_a_votre_service == 1 %}checkbox-checked{% endif %}">
+            </p>
+            
+            <p class="checkbox-item">
+                <span>On demande un conseil de prévention/vaccination</span>
+                <input type="checkbox" class="checkbox {% if doc.on_demande_un_conseil_de_preventionvaccination == 1 %}checkbox-checked{% endif %}">
+            </p>
+            
+            <p class="checkbox-item">
+                <span>Autre (À préciser...)</span>
+                <input type="checkbox" class="checkbox {% if doc.autre_apreciser == 1 %}checkbox-checked{% endif %}">
+            </p>
+
+            <!-- Exemple de question avec Oui/Non alignés à droite -->
+            <p><strong>Est-ce que votre patient présente l'un des facteurs de risque de BMR suivants ?</strong></p>
+            <p class="checkbox-item">
+                <span>Votre patient a été en contact avec une structure de soins dans les 6 mois précédents? (hôpital, dispensaire, etc.)</span>
+                <input type="checkbox" class="checkbox {% if doc.votre_patient__a_été == 1 %}checkbox-checked{% endif %}">
+            </p>
+            
+            <p class="checkbox-item">
+                <span>Votre patient a reçu une antibiothérapie dans les 6 mois précédents? (Hors épisode actuel)</span>
+                <input type="checkbox" class="checkbox {% if doc.votre_patient == 1 %}checkbox-checked{% endif %}">
+            </p>
+            
+            <p class="checkbox-item">
+                <span>Votre patient est connu colonisé ou récemment infecté par une bactérie résistante?</span>
+                <input type="checkbox" class="checkbox {% if doc.votre_patient_2 == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <!-- Autres questions avec Oui/Non alignés à droite -->
+            <div class="yn-container">
+                <strong>Est ce que votre patient a une allergie connue aux antibiotiques?</strong>
+                <div class="yn-group">
+                    <label class="yn-item">
+                        Oui
+                        <input type="checkbox" class="checkbox {% if doc.oui == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                    <label class="yn-item">
+                        Non
+                        <input type="checkbox" class="checkbox {% if doc.non == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                </div>
+            </div>
+            <p class="checkbox-item">
+                <span>allergie aux bétalacamines ( Penicillines)</span>
+                <input type="checkbox" class="checkbox {% if doc.allergie_aux_bétalacamines__penicillines == 1 %}checkbox-checked{% endif %}">
+            </p>
+            
+            <p class="checkbox-item">
+                <span>Autre (Type allergie )</span>
+                <input type="checkbox" class="checkbox {% if doc.autre_type_allergie == 1 %}checkbox-checked{% endif %}">
+            </p>
+            {% if doc.autre_type_allergie == 1 %}
+                <span><strong>Autre :</strong></span>
+                <div class="data-text-area">{{ doc.autre_type_aller }}</div>
+            {% endif %}
+            <div class="yn-subcontainer">
+                <span>Quel était la sévérité de cet épisode allergique ?</span>
+                <div class="yn-subgroup">
+                    <label class="yn-subitem">
+                        Mineur
+                        <input type="checkbox" class="checkbox {% if doc.custom_mineur_ == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                    <label class="yn-subitem">
+                        Majeur
+                        <input type="checkbox" class="checkbox {% if doc.custom_mjoeur == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                </div>
+            </div>
+            
+            <p><strong> Votre patient présent-t-il un ou pleusieurs des facteurs d'immunodépression suivants? </strong></p>
+            <p class="checkbox-item">
+                <span>corticothérapie > 15 jours</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_corticothérapie15_jours == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>Biographie</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_biographie_ == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>Immunosuppresseurs</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_immunosuppresseurs == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>Insuffisance rénale au stade d'hémodialyse</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_issufisance_rénale_au_stade_dhémodialyse == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>Insuffisance hépatique (Cirrhose)</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_insuffisance_hépatique_crrihose == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>Splénectomie</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_splénectomie == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>Infection à VIH</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_infection_à_vih_ == 1 %}checkbox-checked{% endif %}">
+            </p>
+            
+            <div class="yn-container">
+                <strong> Antécédents pathologiques?</strong>
+                <div class="yn-group">
+                    <label class="yn-item">
+                        Oui<input type="checkbox" class="checkbox {% if doc.custom_ouioui == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                    <label class="yn-item">
+                        Non<input type="checkbox" class="checkbox {% if doc.custom_custom_non == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                </div>
+            </div>
+
+            <p class="checkbox-item">
+                <span>Diabète</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_diabéte == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>HTA</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_hta == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>Coronaropathie</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_coronaropathie == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>BPCO</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_bpco == 1 %}checkbox-checked{% endif %}">
+            </p>
+            <p class="checkbox-item">
+                <span>Autre(A préciser..)</span>
+                <input type="checkbox" class="checkbox {% if doc.custom_autrea_préciser == 1 %}checkbox-checked{% endif %}">
+            </p>
+
+            <!-- Continuez de la même manière pour les autres questions -->
+        </div>
+
+        <div class="section">
+            <h3>Examen Clinique</h3>
+            <div class="yn-container">
+                <strong>Fièvre ?</strong>
+                <div class="yn-group">
+                    <label class="yn-item">
+                        Oui
+                        <input type="checkbox" class="checkbox {% if doc.custom_oui_fiévre == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                    <label class="yn-item">
+                        Non
+                        <input type="checkbox" class="checkbox {% if doc.custom_non_fiévre_ == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                </div>
+            </div>
+
+            <div class="yn-container">
+                <strong>Hypotension artérielle ?</strong>
+                <div class="yn-group">
+                    <label class="yn-item">
+                        Oui
+                        <input type="checkbox" class="checkbox {% if doc.custom_oui_hypotension_artierelle == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                    <label class="yn-item">
+                        Non
+                        <input type="checkbox" class="checkbox {% if doc.custom__non_hypotension_artierelle == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                </div>
+            </div>
+
+            <p><strong>Écrivez les données pertinentes de l'examen physique</strong></p>
+            {% if doc.custom_ecriver_les_données_pertinentes_de_léxamne_physique %}
+                <div class="data-text-area">{{ doc.custom_ecriver_les_données_pertinentes_de_léxamne_physique }}</div>
+            {% endif %}
+
+            <div class="yn-container">
+                <strong>Presence d'un matriel étranger ?</strong>
+                <div class="yn-group">
+                    <label class="yn-item">
+                        Oui
+                        <input type="checkbox" class="checkbox {% if doc.custom_oui_matriel_etranger_ == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                    <label class="yn-item">
+                        Non
+                        <input type="checkbox" class="checkbox {% if doc.custom_non_matriel_etranger_ == 1 %}checkbox-checked{% endif %}">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Section des boutons -->
+        <div class="popup-actions">
+            <div class="send-container">
+                <button class="button send-btn" id="send-btn">{{ _('Send') }}</button>
+            </div>
+            <div class="other-buttons">
+                <button class="button edit-btn" id="edit-btn">{{ _('Edit') }}</button>
+                <button class="button export-btn" id="export-btn">{{ _('Export') }}</button>
+                <button class="button draft-btn" id="draft-btn">{{ _('Save in draft') }}</button>
+            </div>
+        </div>        
+    </body>
+</html>
